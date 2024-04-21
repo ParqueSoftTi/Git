@@ -1,0 +1,156 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Guía de Git para Estudiantes</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="git-markdown"
+                  title="Guía de Git para Estudiantes"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="1. Instalación y Configuración de Git" duration="0">
+        <p>Para instalar Git en tu sistema, sigue estos pasos:</p>
+<ol type="1">
+<li>Visita el sitio web oficial de Git: <a href="https://git-scm.com/" target="_blank">git-scm.com</a>.</li>
+<li>Descarga la versión adecuada para tu sistema operativo (Windows, macOS, Linux).</li>
+<li>Sigue las instrucciones de instalación proporcionadas en el sitio web.</li>
+<li>Una vez instalado, configura tu nombre de usuario y dirección de correo electrónico utilizando los siguientes comandos: <pre><code language="language-bash" class="language-bash">git config --global user.name &#34;Tu Nombre&#34;
+git config --global user.email &#34;tu@email.com&#34;
+</code></pre>
+</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="2. Práctica 1: Git en Local" duration="0">
+        <p>En esta práctica, aprenderás los conceptos básicos de Git trabajando en un repositorio local. Sigue estos pasos:</p>
+<ol type="1">
+<li><strong>Crea un nuevo repositorio Git en tu sistema local utilizando el comando </strong><strong><code>git init</code></strong><strong>.</strong>Para iniciar un nuevo repositorio Git, simplemente navega hasta la carpeta raíz de tu proyecto en tu terminal o línea de comandos y ejecuta el siguiente comando:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   git init
+</code></pre>
+<p>Esto creará un nuevo repositorio Git en esa carpeta.</p>
+<ol type="1" start="2">
+<li><strong>Añade archivos al repositorio utilizando </strong><strong><code>git add</code></strong><strong> y realiza tu primer commit con </strong><strong><code>git commit</code></strong><strong>.</strong>Después de inicializar el repositorio, puedes comenzar a agregar archivos al área de preparación (staging area) utilizando el comando <code>git add</code>. Por ejemplo, para agregar todos los archivos en el directorio actual, puedes usar:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   git add .
+</code></pre>
+<p>Luego, realiza tu primer commit con un mensaje descriptivo utilizando el comando <code>git commit</code>:</p>
+<pre><code language="language-bash" class="language-bash">   git commit -m &#34;Mensaje descriptivo del commit&#34;
+</code></pre>
+<p>Esto guardará los cambios en el repositorio Git.</p>
+<ol type="1" start="3">
+<li><strong>Crea y trabaja en ramas nuevas utilizando </strong><strong><code>git branch</code></strong><strong> y </strong><strong><code>git checkout</code></strong><strong>.</strong>Puedes crear una nueva rama en Git utilizando el comando <code>git branch</code> seguido del nombre de la nueva rama. Por ejemplo, para crear una nueva rama llamada &#34;nueva-caracteristica&#34;, puedes usar:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   git branch nueva-caracteristica
+</code></pre>
+<p>Luego, cambia a la nueva rama utilizando el comando <code>git checkout</code>:</p>
+<pre><code language="language-bash" class="language-bash">   git checkout nueva-caracteristica
+</code></pre>
+<p>Ahora puedes realizar cambios en los archivos y hacer commits en esta nueva rama sin afectar la rama principal.</p>
+<ol type="1" start="4">
+<li><strong>Realiza cambios en los archivos, haz commits en la rama actual y fusiona ramas utilizando </strong><strong><code>git merge</code></strong><strong>.</strong>Después de realizar cambios en los archivos y hacer commits en la rama actual, puedes fusionar los cambios de una rama a otra utilizando el comando <code>git merge</code>. Por ejemplo, para fusionar los cambios de la rama &#34;nueva-caracteristica&#34; a la rama principal, primero cambia a la rama principal:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   git checkout main
+</code></pre>
+<p>Luego, realiza la fusión:</p>
+<pre><code language="language-bash" class="language-bash">   git merge nueva-caracteristica
+</code></pre>
+<p>Esto integrará los cambios de la rama &#34;nueva-caracteristica&#34; en la rama principal.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="3. Práctica 2: Git en Remoto" duration="0">
+        <p>En esta práctica, aprenderás a trabajar con repositorios remotos en GitHub. Sigue estos pasos:</p>
+<ol type="1">
+<li><strong>Crea un nuevo repositorio en GitHub.</strong><ul>
+<li>Inicia sesión en tu cuenta de GitHub.</li>
+<li>Haz clic en el botón &#34;New&#34; para crear un nuevo repositorio.</li>
+<li>Sigue las instrucciones para configurar tu repositorio remoto.</li>
+</ul>
+</li>
+<li><strong>Clona el repositorio remoto a tu sistema local utilizando </strong><strong><code>git clone</code></strong><strong>.</strong>Una vez que hayas creado el repositorio en GitHub, puedes clonarlo en tu sistema local utilizando el siguiente comando:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   git clone URL-del-repositorio
+</code></pre>
+<p>Esto creará una copia del repositorio remoto en tu sistema local.</p>
+<ol type="1" start="3">
+<li><strong>Realiza cambios locales, haz commits y envía tus cambios al repositorio remoto utilizando </strong><strong><code>git push</code></strong><strong>.</strong>Después de clonar el repositorio, puedes realizar cambios en los archivos, agregarlos al área de preparación y hacer commits de la misma manera que lo harías en un repositorio local. Una vez que estés listo para enviar tus cambios al repositorio remoto en GitHub, utiliza el comando <code>git push</code>:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   git push origin main
+</code></pre>
+<p>Esto enviará tus cambios a la rama principal del repositorio remoto en GitHub.</p>
+<ol type="1" start="4">
+<li><strong>Trabaja con ramas en el repositorio remoto, crea solicitudes de extracción (pull requests) y fusiona cambios utilizando la interfaz de GitHub.</strong>En GitHub, puedes trabajar con ramas de la misma manera que lo haces localmente. Puedes crear nuevas ramas, realizar cambios, hacer commits y fusionar ramas utilizando la interfaz web de GitHub. Además, puedes crear solicitudes de extracción (pull requests) para proponer cambios en el repositorio remoto y fusionarlos con otras ramas. Utiliza la interfaz de GitHub para revisar los cambios, discutirlos con tu equipo y fusionarlos cuando estés listo.<pre><code></code></pre>
+</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="4. Práctica de Fusión de Ramas en Git: Squash, Rebase y Merge" duration="0">
+        <p><strong>Paso 1: Preparación del Repositorio</strong> Clona el repositorio principal.</p>
+<pre><code language="language-bash" class="language-bash">git clone &lt;url_del_repositorio&gt;
+cd &lt;nombre_del_repositorio&gt;
+</code></pre>
+<p>Crea una nueva rama para trabajar.</p>
+<pre><code language="language-bash" class="language-bash">git checkout -b feature-nueva-funcionalidad
+</code></pre>
+<p>Realiza tus cambios en la nueva rama y haz commit de ellos.</p>
+<pre><code language="language-bash" class="language-bash">git add .
+git commit -m &#34;Implementa nueva funcionalidad&#34;
+</code></pre>
+<p><strong>Paso 2: Fusión Utilizando Squash</strong> La fusión con squash combina todos los commits de la rama de características en un solo commit antes de fusionarlos con la rama principal. Esto ayuda a mantener un historial de confirmaciones más limpio y coherente.</p>
+<pre><code language="language-bash" class="language-bash">git checkout main
+git merge --squash feature-nueva-funcionalidad
+git commit -m &#34;Implementa nueva funcionalidad&#34;
+</code></pre>
+<p><strong>Paso 3: Fusión Utilizando Rebase</strong> Rebasing reorganiza el historial de confirmaciones moviendo los commits de una rama a otra. Esto ayuda a mantener un historial lineal y limpio, pero ten en cuenta que puede reescribir el historial de confirmaciones, por lo que se debe usar con cuidado.</p>
+<pre><code language="language-bash" class="language-bash">git checkout main
+git rebase main feature-nueva-funcionalidad
+git checkout main
+git merge feature-nueva-funcionalidad
+</code></pre>
+<p><strong>Paso 4: Fusión Utilizando Merge</strong> El merge es la técnica más simple y común para fusionar ramas en Git. Simplemente combina los cambios de una rama en otra y crea un nuevo commit de fusión.</p>
+<pre><code language="language-bash" class="language-bash">git checkout main
+git merge feature-nueva-funcionalidad
+</code></pre>
+<p><strong>Paso 5: Eliminación de la Rama de Características</strong> Después de fusionar la rama de características con éxito, es una buena práctica eliminarla para mantener el repositorio limpio.</p>
+<pre><code language="language-bash" class="language-bash">git branch -d feature-nueva-funcionalidad
+</code></pre>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
